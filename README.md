@@ -52,3 +52,14 @@ Simply type: `docker-compose down`
 
 ## Security
 user/user
+
+## Troubleshooting
+
+### max virtual memory areas vm.max\_map\_count is too low
+
+Elasticsearch might fail to start since version 5 due to a limit on mmap counts.
+
+You may see a message like this one:
+`[2017-12-12T18:42:50,695][WARN ][o.e.b.BootstrapChecks    ] [mcSRr96] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]`
+
+To solve the problem, increase the limits. See [Elasticsearch's documentation on virtual memory](https://www.elastic.co/guide/en/elasticsearch/reference/5.0/vm-max-map-count.html#vm-max-map-count) for guidance.
